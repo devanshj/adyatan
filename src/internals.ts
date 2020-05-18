@@ -70,22 +70,22 @@ type Set<O, P extends Path<O>, V> = unknown;
 
 /* utils */
 
-export const hasProperty = <O extends object, K extends PropertyKey>(o: O, k: K): o is O & { [k in K]: unknown } =>
+const hasProperty = <O extends object, K extends PropertyKey>(o: O, k: K): o is O & { [k in K]: unknown } =>
 	k in o
 	
-export const isObject = (x: unknown): x is object =>
+const isObject = (x: unknown): x is object =>
 	typeof x === "object" && x !== null
 
-export const objectMapValues = <O extends object, U>(o: O, mapper: (v: O[keyof O]) => U): { [k in keyof O]: U } =>
+const objectMapValues = <O extends object, U>(o: O, mapper: (v: O[keyof O]) => U): { [k in keyof O]: U } =>
 	Object.fromEntries(
 		Object.entries(o)
 		.map(([k, v]) => [k, mapper(v)])
 	) as any;
 
-export const tuple = <T extends any[]>(...xs: T) =>
+const tuple = <T extends any[]>(...xs: T) =>
 	xs
 
-export const setIndex = <T extends any[], I extends number, V>(xs: T, i: I, v: V): T & { [i in I]: V } => {
+const setIndex = <T extends any[], I extends number, V>(xs: T, i: I, v: V): T & { [i in I]: V } => {
 	let ys = [...xs];
 	ys[i] = v;
 	return ys as any;
@@ -97,5 +97,5 @@ type Pipe = {
 	<A, B, C>(a: A, ab: (a: A) => B, bc: (b: B) => C): C
 	<A, B, C, D>(a: A, ab: (a: A) => B, bc: (b: B) => C, cd: (c: C) => D): D
 }
-export const pipe: Pipe = (value: any, ...fns: any[]) =>
+const pipe: Pipe = (value: any, ...fns: any[]) =>
 	fns.reduce((v, fn) => fn(v), value)
