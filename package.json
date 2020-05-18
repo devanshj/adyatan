@@ -1,0 +1,20 @@
+{
+	"name": "adyatan",
+	"version": "0.0.1",
+	"description": "Magically create the \"set\" function for \"get\" function of your lens",
+	"main": "dist/index.js",
+	"files": ["dist"],
+	"repository": "https://github.com/devanshj/adyatan",
+	"author": "Devansh Jethmalani",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/jest": "^25.2.2",
+		"jest": "^26.0.1",
+		"ts-jest": "^26.0.0",
+		"typescript": "^3.9.2"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node"
+	}
+}
