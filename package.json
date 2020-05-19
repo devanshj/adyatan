@@ -1,6 +1,6 @@
 {
 	"name": "adyatan",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Magically create the \"set\" function for \"get\" function of your lens",
 	"main": "index.js",
 	"repository": "https://github.com/devanshj/adyatan",
