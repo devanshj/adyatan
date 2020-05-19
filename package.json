@@ -1,9 +1,8 @@
 {
 	"name": "adyatan",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Magically create the \"set\" function for \"get\" function of your lens",
-	"main": "dist/index.js",
-	"files": ["dist"],
+	"main": "index.js",
 	"repository": "https://github.com/devanshj/adyatan",
 	"author": "Devansh Jethmalani",
 	"license": "MIT",
