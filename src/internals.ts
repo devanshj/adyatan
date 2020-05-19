@@ -76,12 +76,6 @@ const hasProperty = <O extends object, K extends PropertyKey>(o: O, k: K): o is 
 const isObject = (x: unknown): x is object =>
 	typeof x === "object" && x !== null
 
-const objectMapValues = <O extends object, U>(o: O, mapper: (v: O[keyof O]) => U): { [k in keyof O]: U } =>
-	Object.fromEntries(
-		Object.entries(o)
-		.map(([k, v]) => [k, mapper(v)])
-	) as any;
-
 const tuple = <T extends any[]>(...xs: T) =>
 	xs
 
