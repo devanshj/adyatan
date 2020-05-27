@@ -1,6 +1,6 @@
 # adyatan
 
-If I tell you the getter of my lens is `x => [x.a, x.b]` and ask you what would the setter be? You would say `y => ({ a: y[0], b: y[1] })`. The point being in some cases the setter can be derived from the getter, but we still explicitly write our setters. Adyatan (hindi for "update") fixes that...
+If I tell you the getter of my lens is `x => [x.a, x.b]` and ask you what would the setter be? You would say `(y, x) => ({ ...x, a: y[0], b: y[1] })`. The point being in some cases the setter can be derived from the getter, but we still explicitly write our setters. Adyatan (hindi for "update") fixes that...
 
 ```javascript
 import setter from "adyatan";
