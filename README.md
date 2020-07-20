@@ -1,6 +1,6 @@
 # adyatan
 
-If I tell you the getter of my lens is `user => user.age` and ask you what would the setter (without any guards or logic) be? You would say `(age, user) => ({ ...user, age })`. The point being in some cases the setter can be derived from the getter, but we still explicitly write our setters. Adyatan (hindi for "update") fixes that...
+If I tell you the getter of my lens is `user => user.age` and ask you what would the setter (without any guards or logic) be? You would say `(age, user) => ({ ...user, age })`. The point being in some cases the setter can be derived from the getter, but we still explicitly write our setters. Adyatan (hindi for "update") gives an alternative...
 
 ```javascript
 import setter from "adyatan";
