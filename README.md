@@ -14,4 +14,25 @@ setNameAge(["Devansh", 20], {})
 // { name: "Devansh", age: 20 }
 ```
 
+You'd usually pair it with some lens library, eg...
+
+```javascript
+import { useProfunctorState as _useProfunctorState } from "@staltz/use-profunctor-state"
+import setter from "adyatan";
+
+const useProfunctorState = (...a) => {
+  let s = _useProfunctorState(...a)
+  return ({
+    map: get => s.promap(get, setter(get)),
+    promap: (...a) => s.promap(...a)
+  })
+}
+
+// Without adyatan
+_useProfunctorState({ a: 0 }).promap(x => x.a, (a, x) => ({ ...x, a })
+
+// With adyatan
+useProfunctorState({ a: 0 }).map(x => x.a)
+```
+
 Now obviously it works only for cases where you're just changing the structure ie no "logic" involved. Also it's meant to be a toy, YOLO if you want to use it anyways.
