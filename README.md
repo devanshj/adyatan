@@ -29,7 +29,7 @@ const useProfunctorState = (...a) => {
 }
 
 // Without adyatan
-_useProfunctorState({ a: 0 }).promap(x => x.a, (a, x) => ({ ...x, a })
+_useProfunctorState({ a: 0 }).promap(x => x.a, (a, x) => ({ ...x, a }))
 
 // With adyatan
 useProfunctorState({ a: 0 }).map(x => x.a)
